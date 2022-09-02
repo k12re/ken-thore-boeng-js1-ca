@@ -20,13 +20,13 @@ const corsFix = proxyUrl + newUrl;
 
 async function getDetails() {
 
-    const response = await fetch(newUrl);
+    const response = await fetch(proxyUrl);
     const details = await response.json()
     //response.headers["Content-Type"] === "application/json"
 
     console.log(details.data.memes)
 
-    getDetails(details)
+    //getDetails(details)
 
     detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
                                     <img class="image" src="${results[i].url}" alt="${results[i].name}"/>
@@ -34,5 +34,5 @@ async function getDetails() {
     //console.log(results[i].id);  
 }
 
-//getDetails()
+getDetails()
 
