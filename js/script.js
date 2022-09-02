@@ -18,7 +18,7 @@ async function callAPI() {
     const results = json.data.memes;
     console.log(results);
 
-    //resultsContainer.innerHTML = "";
+    resultsContainer.innerHTML = "";
 
     for (let i = 0; i < results.length; i++) {
         resultsContainer.innerHTML += `<a href="details.html?id=${results[i].id}">

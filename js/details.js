@@ -26,13 +26,19 @@ async function getDetails() {
 
     console.log(details.data.memes)
 
-    //getDetails(details)
+    renderDetails(details)
 
-    detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
-                                    <img class="image" src="${results[i].url}" alt="${results[i].name}"/>
-                                    <p class="size">Height: ${results[i].height} x Width: ${results[i].width}</p>`;
+    //detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
+    //                                <img class="image" src="${results[i].url}" alt="${results[i].name}"/>
+    //                                <p class="size">Height: ${results[i].height} x Width: ${results[i].width}</p>`;
     //console.log(results[i].id);  
 }
 
 getDetails()
 
+
+function renderDetails(details) {
+    detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
+                                    <img class="image" src="${results[i].url}" alt="${results[i].name}"/>
+                                    <p class="size">Height: ${results[i].height} x Width: ${results[i].width}</p>`;
+}
