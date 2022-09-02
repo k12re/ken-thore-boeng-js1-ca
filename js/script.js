@@ -2,6 +2,13 @@ const url = `https://api.imgflip.com/get_memes`;
 
 const resultsContainer = document.querySelector(".results");
 
+//const options = {
+//    method: "GET",
+//    header: {
+//        "x-requested-with": "https://api.imgflip.com/get_memes/"
+//    }
+//}
+
 
 async function callAPI() {
 
