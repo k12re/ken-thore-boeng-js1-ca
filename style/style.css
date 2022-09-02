@@ -1,6 +1,8 @@
 body {
     background-color: lightgrey;
-    max-width: fit-content;
+    max-width: 100%;
+    text-decoration: none;
+    text-align: center;
 }
 
 .image {
