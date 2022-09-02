@@ -1,0 +1,10 @@
+body {
+    background-color: lightgrey;
+    max-width: fit-content;
+}
+
+.image {
+    border: 20px solid black;
+    border-radius: 50px;
+
+}
