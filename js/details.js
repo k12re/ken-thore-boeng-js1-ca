@@ -4,7 +4,7 @@ const queryString = document.location.search;
 
 let param = new URLSearchParams(queryString);
 
-let id = param.get("_id");
+let id = parseInt (param.get("id"));
 
 console.log(id);
 
@@ -15,26 +15,28 @@ console.log(newUrl);
 async function getDetails() {
 
     const response = await fetch(newUrl);
-    const details = await response.json();
+    const results = await response.json();
     //response.headers["Content-Type"] === "application/json"
 
-    console.log(details)
+    console.log(results)
 
-    renderDetails(details)
+    //renderDetails(details)
 
-    //detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
-    //                                <img class="image" src="${results[i].url}" alt="${results[i].name}"/>
-    //                                <p class="size">Height: ${results[i].height} x Width: ${results[i].width}</p>`;
-    //console.log(results[i].id);  
+    detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
+                                    <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
+                                    <li class="films">Films:
+                                    <ul>${results.films}</ul>
+                                </li>`;
+    console.log(results._id);  
 }
 
 getDetails()
 
 
-function renderDetails(details) {
-    detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
-                                    <img class="image" src="${results[i].imageUrl}" alt="${results[i].name}"/>
-                                    <li class="films">
-                                            <ul>${results[i].films}</ul>
-                                        </li>`;
-}
+//function renderDetails(details) {
+//    detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
+//                                    <img class="image" src="${results[i].imageUrl}" alt="${results[i].name}"/>
+//                                    <li class="films">
+//                                            <ul>${results[i].films}</ul>
+//                                        </li>`;
+//}
