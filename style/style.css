@@ -5,6 +5,12 @@ body {
     text-align: center;
 }
 
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
 .image {
     border: 20px solid black;
     border-radius: 50px;

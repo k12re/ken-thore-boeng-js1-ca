@@ -18,15 +18,13 @@ async function callAPI() {
         resultsContainer.innerHTML += `<a href="details.html?id=${results[i]._id}">
                                         <h2 class="result">Name: ${results[i].name}</h2>
                                         <img class="image" src="${results[i].imageUrl}" alt="${results[i].name}"/>
-                                        <li class="films">
+                                        <li class="films">Films:
                                             <ul>${results[i].films}</ul>
                                         </li>
                                         </a>`;
                                         //console.log(results[i].id);  
 
-        if(results.length === 20) {
-            break
-        }                                
+                                   
     }
 
     
