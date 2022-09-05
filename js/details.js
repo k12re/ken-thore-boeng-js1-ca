@@ -6,16 +6,16 @@ const param = new URLSearchParams(queryString);
 
 const id = param.get("_id")
 
-//console.log(id);
+console.log(id);
 
-const newUrl = `https://api.disneyapi.dev/characters/:` + id;
+const newUrl = `https://api.disneyapi.dev/characters/` + id;
 
 console.log(newUrl);
 
 async function getDetails() {
 
     const response = await fetch(newUrl);
-    const details = await response.json()
+    const details = await response.json();
     //response.headers["Content-Type"] === "application/json"
 
     console.log(details)

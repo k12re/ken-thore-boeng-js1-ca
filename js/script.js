@@ -16,7 +16,7 @@ async function callAPI() {
 
     for (let i = 0; i < results.length; i++) {
         resultsContainer.innerHTML += `<a href="details.html?id=${results[i]._id}">
-                                        <h2 class="result">${results[i].name}</h2>
+                                        <h2 class="result">Name: ${results[i].name}</h2>
                                         <img class="image" src="${results[i].imageUrl}" alt="${results[i].name}"/>
                                         <li class="films">
                                             <ul>${results[i].films}</ul>
