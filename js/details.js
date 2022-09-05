@@ -4,27 +4,21 @@ const queryString = document.location.search;
 
 const param = new URLSearchParams(queryString);
 
-const id = param.get("id")
+const id = param.get("_id")
 
 //console.log(id);
 
-const newUrl = `https://api.imgflip.com/get_memes/` + id;
-const proxyUrl = `https://noroffcors.herokuapp.com/`;
+const newUrl = `https://api.disneyapi.dev/characters/:id`;
 
-const corsFix = proxyUrl + newUrl;
-
-
-
-
-//console.log(newUrl);
+console.log(newUrl);
 
 async function getDetails() {
 
-    const response = await fetch(corsFix);
+    const response = await fetch(newUrl);
     const details = await response.json()
     //response.headers["Content-Type"] === "application/json"
 
-    console.log(details.data.memes)
+    console.log(details)
 
     renderDetails(details)
 
@@ -39,6 +33,8 @@ getDetails()
 
 function renderDetails(details) {
     detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
-                                    <img class="image" src="${results[i].url}" alt="${results[i].name}"/>
-                                    <p class="size">Height: ${results[i].height} x Width: ${results[i].width}</p>`;
+                                    <img class="image" src="${results[i].imageUrl}" alt="${results[i].name}"/>
+                                    <li class="films">
+                                            <ul>${results[i].films}</ul>
+                                        </li>`;
 }
