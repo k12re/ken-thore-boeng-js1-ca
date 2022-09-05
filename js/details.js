@@ -20,7 +20,7 @@ const corsFix = proxyUrl + newUrl;
 
 async function getDetails() {
 
-    const response = await fetch(proxyUrl);
+    const response = await fetch(corsFix);
     const details = await response.json()
     //response.headers["Content-Type"] === "application/json"
 
