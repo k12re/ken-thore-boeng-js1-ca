@@ -6,13 +6,16 @@ body {
 }
 
 a {
-    list-style: none;
-    text-decoration: none;
     color: black;
 }
 
+li {
+    list-style: none;
+
+}
+
 .image {
-    border: 20px solid black;
+    border: 15px solid black;
     border-radius: 50px;
 
 }
