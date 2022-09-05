@@ -8,7 +8,7 @@ const id = param.get("_id")
 
 //console.log(id);
 
-const newUrl = `https://api.disneyapi.dev/characters/:id`;
+const newUrl = `https://api.disneyapi.dev/characters/:` + id;
 
 console.log(newUrl);
 
