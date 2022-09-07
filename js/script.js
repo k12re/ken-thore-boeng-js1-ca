@@ -2,7 +2,7 @@ const url = `https://api.disneyapi.dev/characters`;
 
 
 const resultsContainer = document.querySelector(".results");
-const movieContainer = document.querySelector(".movie");
+//const movieContainer = document.querySelector(".movie");
 
 
 async function callAPI() {

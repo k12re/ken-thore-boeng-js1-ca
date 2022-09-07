@@ -1,4 +1,6 @@
 const detailsContainer = document.querySelector(".details");
+const movieContainer = document.querySelector(".movie");
+
 
 const queryString = document.location.search;
 
@@ -6,28 +8,36 @@ let param = new URLSearchParams(queryString);
 
 let id = parseInt (param.get("id"));
 
-console.log(id);
-
 const newUrl = `https://api.disneyapi.dev/characters/` + id;
 
-console.log(newUrl);
 
 async function getDetails() {
 
     const response = await fetch(newUrl);
     const results = await response.json();
-    //response.headers["Content-Type"] === "application/json"
+    document.title = results.name
+    
+    
+    //console.log(results.films)
 
-    console.log(results)
 
+    console.log(movieContainer); 
+    
     //renderDetails(details)
+
+    //movieContainer.innerHTML = "";
+
+    for (let i = 0; i < results.films.length; i++) {
+        movieContainer.innerHTML += `<ul class="movie">${results.films[i]}</ul>`
+    }; 
 
     detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
                                     <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
-                                    <li class="films">Films:
-                                    <ul>${results.films}</ul>
-                                </li>`;
-    console.log(results._id);  
+                                    <li class="films">Films: </li>`
+                                    
+                               
+
+     
 }
 
 getDetails()
