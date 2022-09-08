@@ -9,13 +9,9 @@ async function callAPI() {
 
     const response = await fetch(url);
     const json = await response.json();
-    //console.log(json.data.memes);
     const results = json.data;
     //console.log(results);
 
-
-
-    //movieContainer.innerHTML = "No movies";
 
     for (let i = 0; i < results.length; i++) {
         resultsContainer.innerHTML += `<a href="details.html?id=${results[i]._id}">

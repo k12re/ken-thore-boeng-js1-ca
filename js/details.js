@@ -2,7 +2,6 @@ const detailsContainer = document.querySelector(".details");
 const movieContainer = document.querySelector(".movie");
 
 
-
 const queryString = document.location.search;
 
 let param = new URLSearchParams(queryString);
@@ -17,20 +16,12 @@ async function getDetails() {
     const response = await fetch(newUrl);
     const results = await response.json();
     document.title = results.name
-    
-    
-    
+
+ 
     //console.log(results.films)
 
 
-    console.log(results.films); 
-    
-    //renderDetails(details)
-
-    //movieContainer.innerHTML = "";
-
-    
-
+    console.log(results.films);
 
 
     detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
@@ -51,12 +42,3 @@ async function getDetails() {
 }
 
 getDetails()
-
-
-//function renderDetails(details) {
-//    detailsContainer.innerHTML += `<h2 class="result">${results[i].name}</h2>
-//                                    <img class="image" src="${results[i].imageUrl}" alt="${results[i].name}"/>
-//                                    <li class="films">
-//                                            <ul>${results[i].films}</ul>
-//                                        </li>`;
-//}
