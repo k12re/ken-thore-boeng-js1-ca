@@ -27,7 +27,7 @@ async function callAPI() {
     console.log(results[i].films);                                     
 
     //if(results[i].films.length === 0) {
-    //    movieContainer.innerHTML = "None"
+    //    movieContainer.innerHTML += "None"
     //}
 
                                    
@@ -35,4 +35,4 @@ async function callAPI() {
 
 }
 
-callAPI()
+callAPI();
