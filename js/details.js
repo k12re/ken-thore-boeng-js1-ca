@@ -2,6 +2,7 @@ const detailsContainer = document.querySelector(".details");
 const movieContainer = document.querySelector(".movie");
 
 
+
 const queryString = document.location.search;
 
 let param = new URLSearchParams(queryString);
@@ -21,7 +22,7 @@ async function getDetails() {
     //console.log(results.films)
 
 
-    console.log(movieContainer); 
+    console.log(results.films); 
     
     //renderDetails(details)
 
@@ -35,6 +36,9 @@ async function getDetails() {
                                     <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
                                     <li class="films">Films: </li>`
                                     
+    if(results.films.length === 0) {
+    movieContainer.innerHTML = "None"
+    } 
                                
 
      
