@@ -2,7 +2,7 @@ const url = `https://api.disneyapi.dev/characters`;
 
 
 const resultsContainer = document.querySelector(".results");
-//const movieContainer = document.querySelector(".movie");
+const movieContainer = document.querySelector(".movie");
 
 
 async function callAPI() {
@@ -11,7 +11,10 @@ async function callAPI() {
     const json = await response.json();
     //console.log(json.data.memes);
     const results = json.data;
-    console.log(results);
+    //console.log(results);
+
+
+    
 
     //movieContainer.innerHTML = "No movies";
 
@@ -24,6 +27,13 @@ async function callAPI() {
                                         </li>
                                         </a>`;
                                         //console.log(results[i].id);  
+
+
+    console.log(results[i].films);                                     
+
+    //if(results[i].films.length === 0) {
+    //    movieContainer.innerHTML = "None"
+    //}
 
                                    
     }
