@@ -1,4 +1,5 @@
 const contactForm = document.querySelector(".contact-form")
+const message = document.querySelector(".message")
 const name = document.querySelector("#name")
 const nameReq = document.querySelector("#name-req")
 const subject = document.querySelector("#subject")
@@ -46,7 +47,24 @@ function validateForm() {
     };
 
     
+
+    
 }
 
-contactForm.addEventListener("submit", validateForm)
+function submit(event) {
+
+    message.innerHTML = "";
+
+    event.preventDefault();
+
+    if(name.value.length > 0 && subject.value.length < 9 && checkMail(email.value) === true && address.value.length < 25) {
+        message.innerHTML = `<div class="message">Submission success<div>`;
+    }
+    contactForm.reset();
+
+    console.log(message.value);
+}
+
+contactForm.addEventListener("submit", validateForm);
+contactForm.addEventListener("submit", submit);
 
