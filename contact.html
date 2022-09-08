@@ -16,24 +16,28 @@
             <form class="contact-form">
                 <label>
                     Name:
-                    <input type="name">
+                    <input type="name" id="name">
+                    <div class="req" id="name-req">Required</div>
                 </label>
                 <label>
                     Subject:
-                    <input type="text">
+                    <input type="text" id="subject">
+                    <div class="req" id="subject-req">Minimum 10 characters</div>
                 </label>
                 <label>
                     Email: 
-                    <input type="email">
+                    <input type="email" id="email">
+                    <div class="req" id="email-req">Must be valid email address</div>
                 </label>
                 <label>
                     Address:
-                    <input type="text">
+                    <input type="text" id="address">
+                    <div class="req" id="address-req">Minimum 25 characters</div>
                 </label>
                 <button>Send</button>
             </form>
         </div>
     </main>
-    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>

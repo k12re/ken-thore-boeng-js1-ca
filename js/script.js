@@ -14,7 +14,6 @@ async function callAPI() {
     //console.log(results);
 
 
-    
 
     //movieContainer.innerHTML = "No movies";
 
@@ -41,4 +40,3 @@ async function callAPI() {
 }
 
 callAPI()
-
