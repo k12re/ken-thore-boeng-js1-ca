@@ -26,10 +26,12 @@ li {
     padding-top: 10px;
     list-style: none;
     font-weight: bold;
+
 }
 
 ul {
     padding-inline-start: 0px;
+    font-weight: normal;
 }
 
 .image {

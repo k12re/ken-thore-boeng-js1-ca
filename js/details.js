@@ -18,25 +18,26 @@ async function getDetails() {
     document.title = results.name
 
  
-    //console.log(results.films)
+    console.log(results.films)
+
+    for (let i = 0; i < results.films.length; i++) {
+        movieContainer.innerHTML += `<ul class="movie">${results.films[i]}</ul>`
+    }; 
 
 
-    console.log(results.films);
-
+    if(results.films.length === 0) {
+    movieContainer.innerHTML = "None"
+    }; 
+                               
 
     detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
                                     <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
-                                    <li class="films">Films: `
+                                    <li class="films">Films: </li>`
                                     
 
-                                    for (let i = 0; i < results.films.length; i++) {
-                                        movieContainer.innerHTML += `<ul class="movie">${results.films[i]}</ul></li>`
-                                    }; 
 
-                                    if(results.films.length === 0) {
-                                        movieContainer.innerHTML = "None"
-                                        } 
-                               
+
+
 
      
 }
