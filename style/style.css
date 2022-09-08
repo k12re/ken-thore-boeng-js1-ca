@@ -68,4 +68,15 @@ button {
     color: darkred;
 }
 
-.loading
+.loading {
+    border: black;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+@keyframes .loading{
+    from {
+        transform: 
+    }
+}

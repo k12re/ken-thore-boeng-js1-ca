@@ -1,5 +1,5 @@
 const detailsContainer = document.querySelector(".details");
-const movieContainer = document.querySelector(".movie");
+//const movieContainer = document.querySelector(".movie");
 
 
 const queryString = document.location.search;
@@ -19,12 +19,6 @@ async function getDetails() {
 
  
     console.log(results.films)
-
-
-    
-
-
-    
                                
 
     detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
