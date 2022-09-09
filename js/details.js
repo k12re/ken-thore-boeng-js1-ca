@@ -38,7 +38,8 @@ async function getDetails() {
                                             detailsContainer.innerHTML += `<ul>None</ul>`
                                         };
 
-                                        `<li class="tvshows">Series!!: </li>`
+                                        //`<li class="tvshows">Series!!: </li>` 
+                                        //I can't get this to view in browser so added it in the loop below, not ideal as it also loops the <li> title
 
                                         if(results.tvShows && results.tvShows.length) {
                                             for (let i = 0; i < results.tvShows.length; i++) {

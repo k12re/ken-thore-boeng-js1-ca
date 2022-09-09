@@ -55,13 +55,11 @@ function submit(event) {
 
     if(checkInputs(name.value, 1) && checkInputs(subject.value, 10) && checkInputs(email.value, true) && checkInputs(address.value, 25)) {
         message.innerHTML = `<div class="message">Submission success<div>`;
+        contactForm.reset();
     }
     else {
         message.innerHTML = `<div class="error">Please insert valid info<div>`;
     };
-
-    
-    contactForm.reset();
 };
 
 
