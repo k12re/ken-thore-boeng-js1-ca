@@ -1,5 +1,5 @@
 const detailsContainer = document.querySelector(".details");
-//const movieContainer = document.querySelector(".movie");
+const messageContainer = document.querySelector(".error");
 
 
 const queryString = document.location.search;
@@ -13,26 +13,44 @@ const newUrl = `https://api.disneyapi.dev/characters/` + id;
 
 async function getDetails() {
 
-    const response = await fetch(newUrl);
-    const results = await response.json();
-    document.title = results.name
+    try {
+        const response = await fetch(newUrl);
+        const results = await response.json();
+        document.title = results.name
+    
+     
+        detailsContainer.innerHTML = "";
+                                   
+    
+        detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
+                                        <img class="image" src="${results.imageUrl}" alt="${results.name}"/>`;
 
- 
-    console.log(results.films)
-                               
+    
+                                        if(results.films && results.films.length) {
+                                            for (let i = 0; i < results.films.length; i++) {
+                                                detailsContainer.innerHTML += `<li class="films">Films: <ul class="movie">${results.films[i]}</ul></li>`
+                                            }; 
+                                        } else {
+                                            detailsContainer.innerHTML += "None"
+                                        };
 
-    detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
-                                    <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
-                                    <li class="films">Films: </li>`;
-                                    
+                                        //`<li class="tvshows">Series: </li>`
 
-                                    if(results.films && results.films.length) {
-                                        for (let i = 0; i < results.films.length; i++) {
-                                            detailsContainer.innerHTML += `<ul class="movie">${results.films[i]}</ul>`
-                                        }; 
-                                    } else {
-                                        detailsContainer.innerHTML += "None"
-                                    } 
+                                        if(results.tvShows && results.tvShows.length) {
+                                            for (let i = 0; i < results.tvShows.length; i++) {
+                                                detailsContainer.innerHTML += `<li class="tvshows">Series: <ul class="series"> ${results.tvShows[i]}</ul></li>`
+                                            }; 
+                                        } else {
+                                            detailsContainer.innerHTML += "None";
+                                        };
+
+                                        console.log(results)
+    } catch {
+        const error = errorMsg("error", "An error occured");
+        messageContainer.innerHTML = error;
+    }
+
+
 
 
 
