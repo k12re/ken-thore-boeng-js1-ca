@@ -50,7 +50,8 @@ async function getDetails() {
                                         };
 
                                         if(results.films.length === 0 && results.tvShows.length === 0) {
-                                            detailsContainer.innerHTML += "No information to show"
+                                            detailsContainer.innerHTML = `<img class="image" src="${results.imageUrl}" alt="${results.name}"/>
+                                                                            <p>No movies or TV shows to display</p>`
                                         }                                  
     }
     
