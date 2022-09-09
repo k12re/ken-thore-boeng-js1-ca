@@ -13,6 +13,7 @@ const newUrl = `https://api.disneyapi.dev/characters/` + id;
 
 async function getDetails() {
 
+
     try {
         const response = await fetch(newUrl);
         const results = await response.json();
@@ -23,38 +24,42 @@ async function getDetails() {
                                    
     
         detailsContainer.innerHTML += `<h2 class="result">${results.name}</h2>
-                                        <img class="image" src="${results.imageUrl}" alt="${results.name}"/>`;
-
+                                        <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
+                                        <li class="films">Films: </li>
+                                        `;
+                                        
     
                                         if(results.films && results.films.length) {
                                             for (let i = 0; i < results.films.length; i++) {
-                                                detailsContainer.innerHTML += `<li class="films">Films: <ul class="movie">${results.films[i]}</ul></li>`
+                                                detailsContainer.innerHTML += `<ul class="movie">${results.films[i]}</ul>`
                                             }; 
-                                        } else {
-                                            detailsContainer.innerHTML += "None"
+                                        } 
+                                        else {
+                                            detailsContainer.innerHTML += `<ul>None</ul>`
                                         };
 
-                                        //`<li class="tvshows">Series: </li>`
+                                        `<li class="tvshows">Series!!: </li>`
 
                                         if(results.tvShows && results.tvShows.length) {
                                             for (let i = 0; i < results.tvShows.length; i++) {
-                                                detailsContainer.innerHTML += `<li class="tvshows">Series: <ul class="series"> ${results.tvShows[i]}</ul></li>`
+                                                detailsContainer.innerHTML += `<li class="tvshows">Series: </li><ul class="series"> ${results.tvShows[i]}</ul></li>`
                                             }; 
-                                        } else {
+                                        } 
+                                        else {
                                             detailsContainer.innerHTML += "None";
                                         };
 
-                                        console.log(results)
-    } catch {
+                                        if(results.films.length === 0 && results.tvShows.length === 0) {
+                                            detailsContainer.innerHTML += "No information to show"
+                                        }                                  
+    }
+    
+    
+    catch {
         const error = errorMsg("error", "An error occured");
         messageContainer.innerHTML = error;
     }
-
-
-
-
-
-     
 }
+
 
 getDetails()

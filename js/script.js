@@ -8,6 +8,7 @@ const messageContainer = document.querySelector(".error");
 
 async function callAPI() {
 
+
     try{
         const response = await fetch(url);
         const json = await response.json();
@@ -35,7 +36,10 @@ async function callAPI() {
                                             //    detailsContainer.innerHTML += "None"
                                             //} 
         }
-    } catch {
+    } 
+    
+    
+    catch {
         const error = errorMsg("error", "An error occured");
         messageContainer.innerHTML = error;
     }
