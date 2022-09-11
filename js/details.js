@@ -27,6 +27,7 @@ async function getDetails() {
                                         <img class="image" src="${results.imageUrl}" alt="${results.name}"/>
                                         <li class="films">Films: </li>
                                         `;
+                                        //I struggled to get the li to wrap around the ul within this whole section, as the browser auto close them on each line.
                                         
     
                                         if(results.films && results.films.length) {
@@ -43,7 +44,7 @@ async function getDetails() {
 
                                         if(results.tvShows && results.tvShows.length) {
                                             for (let i = 0; i < results.tvShows.length; i++) {
-                                                detailsContainer.innerHTML += `</li><ul class="series"> ${results.tvShows[i]}</ul></li>`
+                                                detailsContainer.innerHTML += `<li><ul class="series"> ${results.tvShows[i]}</ul></li>`
                                             }; 
                                         } 
                                         else {
