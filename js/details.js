@@ -38,16 +38,16 @@ async function getDetails() {
                                             detailsContainer.innerHTML += `<ul>None</ul>`
                                         };
 
-                                        //`<li class="tvshows">Series!!: </li>` 
-                                        //I can't get this to view in browser so added it in the loop below, not ideal as it also loops the <li> title
+                                        detailsContainer.innerHTML += `<li class="tvshows">Series: </li>` 
+                                        
 
                                         if(results.tvShows && results.tvShows.length) {
                                             for (let i = 0; i < results.tvShows.length; i++) {
-                                                detailsContainer.innerHTML += `<li class="tvshows">Series: </li><ul class="series"> ${results.tvShows[i]}</ul></li>`
+                                                detailsContainer.innerHTML += `</li><ul class="series"> ${results.tvShows[i]}</ul></li>`
                                             }; 
                                         } 
                                         else {
-                                            detailsContainer.innerHTML += "None";
+                                            detailsContainer.innerHTML += `<ul>None</ul>`;
                                         };
 
                                         if(results.films.length === 0 && results.tvShows.length === 0) {
